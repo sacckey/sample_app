@@ -16,6 +16,6 @@ module SampleApp
     # -- all .rb files in that directory are automatically loaded.
     
     # 8章の終わりに追加
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
   end
 end
