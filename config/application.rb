@@ -15,7 +15,7 @@ module SampleApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     
-    # 8章の終わりに追加
+    # 8章の終わりに追加→10章の終わりにコメントアウト
     # config.assets.initialize_on_precompile = false
   end
 end
