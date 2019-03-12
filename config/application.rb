@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require File.expand_path('../boot', __FILE__)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,6 +17,8 @@ module SampleApp
     # -- all .rb files in that directory are automatically loaded.
     
     # 8章の終わりに追加→10章の終わりにコメントアウト
-    config.assets.initialize_on_precompile = true
+    # config.assets.initialize_on_precompile = true
+    
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end
