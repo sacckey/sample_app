@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190320134301) do
+ActiveRecord::Schema.define(version: 20190321050950) do
 
-  create_table "likes", force: :cascade do |t|
+  create_table "favorite_relationships", force: :cascade do |t|
     t.integer "user_id"
     t.integer "micropost_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["micropost_id"], name: "index_likes_on_micropost_id"
-    t.index ["user_id", "micropost_id"], name: "index_likes_on_user_id_and_micropost_id", unique: true
-    t.index ["user_id"], name: "index_likes_on_user_id"
+    t.index ["micropost_id"], name: "index_favorite_relationships_on_micropost_id"
+    t.index ["user_id", "micropost_id"], name: "index_favorite_relationships_on_user_id_and_micropost_id", unique: true
+    t.index ["user_id"], name: "index_favorite_relationships_on_user_id"
   end
 
   create_table "microposts", force: :cascade do |t|

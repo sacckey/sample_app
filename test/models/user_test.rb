@@ -90,4 +90,15 @@ class UserTest < ActiveSupport::TestCase
     michael.unfollow(archer)
     assert_not michael.following?(archer)
   end
+  
+  test "should like and unlike a micropost" do
+    michael = users(:michael)
+    micropost = microposts(:most_recent)
+    assert_not michael.likes?(micropost)
+    michael.like(micropost)
+    assert michael.likes?(micropost)
+    assert micropost.liked_by.include?(michael)
+    michael.unlike(micropost)
+    assert_not michael.likes?(micropost)
+  end
 end

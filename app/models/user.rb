@@ -6,8 +6,12 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name:  "Relationship",
                                    foreign_key: "followed_id",
                                    dependent:   :destroy
+
+  has_many :favorite_relationships, dependent: :destroy
+  has_many :likes, through: :favorite_relationships, source: :micropost
+
   has_many :following, through: :active_relationships,  source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower                                 
+  has_many :followers, through: :passive_relationships, source: :follower  
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save   :downcase_email
   before_create :create_activation_digest
@@ -93,9 +97,24 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
 
-  # 現在のユーザーがフォローしてたらtrueを返す
+  # 現在のユーザーがフォローしていたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
+  end
+  
+  # マイクロポストをライクする
+  def like(micropost)
+    likes << micropost
+  end
+
+  # マイクロポストをライク解除する
+  def unlike(micropost)
+    favorite_relationships.find_by(micropost_id: micropost.id).destroy
+  end
+
+  # 現在のユーザーがライクしていたらtrueを返す
+  def likes?(micropost)
+    likes.include?(micropost)
   end
 
   
