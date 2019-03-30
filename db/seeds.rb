@@ -35,6 +35,5 @@ following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
 # フェイバリットリレーションシップ
-microposts = Micropost.all
-favorites = microposts[1..50]
-favorites.each { |favorite| user.like(favorite) }
+Micropost.all[1..20].each  { |micropost| users.first.like(micropost) }
+Micropost.all[11..20].each { |micropost| users.second.like(micropost) }
