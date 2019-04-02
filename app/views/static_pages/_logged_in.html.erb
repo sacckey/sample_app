@@ -11,6 +11,15 @@
       </section>
     </aside>
     <div class="col-md-8">
+      
+      <h3>Micropost Search</h3>
+      <%= form_tag root_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :name => nil %>
+        </p>
+      <% end %>
+      
       <h3>Micropost Feed</h3>
       <%= render 'shared/feed' %>
     </div>

@@ -116,7 +116,15 @@ class User < ApplicationRecord
   def likes?(micropost)
     likes.include?(micropost)
   end
-
+  
+  # ユーザーを検索する
+  def self.search(search)
+    if search
+      where(['name LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
   
   private
 

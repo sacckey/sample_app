@@ -286,6 +286,18 @@ input {
   position: relative;
   left: 60px;
 }
+.btn-gray {
+  background: gray;
+  color: white;
+}
+.btn-gray:hover{
+  background: dimgray;
+  color: white;
+}
+
+#follow_form{
+  margin-top: 20px;
+}
 
 
 aside {
