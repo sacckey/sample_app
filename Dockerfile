@@ -1,15 +1,12 @@
-FROM ruby:2.3.0
+FROM ruby:2.6.2
 
 ENV APP_ROOT /usr/src/sample_app
 
 WORKDIR $APP_ROOT
 
-RUN echo "deb http://deb.debian.org/debian jessie main" > /etc/apt/sources.list &&\
-    echo "deb http://security.debian.org jessie/updates main" >> /etc/apt/sources.list &&\
+RUN \
     apt-get update && \
     apt-get install -y nodejs \
-                       mysql-client \
-                       postgresql-client \
                        sqlite3 \
                        --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
@@ -27,6 +24,10 @@ RUN \
   rm -rf ~/.gem
 
 COPY . $APP_ROOT
+
+RUN \
+  rails db:migrate && \
+  rails db:seed
 
 EXPOSE  3000
 CMD ["rails", "server", "-b", "0.0.0.0"]
