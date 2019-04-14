@@ -8,34 +8,18 @@
 
 [Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
 ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
-詳細は [LICENSE.md](LICENSE.md) をご覧ください。
 
 ## 使い方
 
 このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
-その後、次のコマンドで必要になる RubyGems をインストールします。
+その後、次のコマンドで動作用のdockerコンテナを立ち上げます。
 
 ```
-$ bundle install --without production
+$ docker build -t sample_app .
+$ docker run -d -p 3000:3000 sample_app
 ```
 
-その後、データベースへのマイグレーションを実行します。
+http://localhost:3000/ にアクセスして、アプリケーションを動かすことができます。
 
-```
-$ rails db:migrate
-```
-
-最後に、テストを実行してうまく動いているかどうか確認してください。
-
-```
-$ rails test
-```
-
-テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
-
-```
-$ rails server
-```
-
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
+また、以下にデプロイしていますので、そちらでも動かすことができます。
+https://agile-waters-23575.herokuapp.com/
