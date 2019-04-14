@@ -46,12 +46,22 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
+  margin-top: 50px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $gray-medium-light;
+//  font-size: 1.2em;
+//  letter-spacing: -1px;
+//  text-align: center;
+//  font-weight: normal;
+//  color: $gray-light;
+}
+
+h4 {
+  margin-bottom: 15px;
+  margin-top: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $gray-medium-light;
 }
 
 p {
@@ -297,6 +307,19 @@ input {
 
 #follow_form{
   margin-top: 20px;
+}
+#micropost-count{
+  display: inline;
+}
+.btn-csv{
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+
+/* About */
+.list {
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
 
 

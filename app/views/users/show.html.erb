@@ -23,7 +23,12 @@
     <% end %>
     
     <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @microposts.count %>)</h3>
+      <% micropost_count = @microposts.count %>
+      <h3 id="micropost-count">Microposts (<%= micropost_count %>)</h3>
+      <%= link_to "Export CSV", user_path(@user,format: :csv, search: params[:search]),
+      class: "btn btn-primary btn-csv",
+      data: { confirm: "You are about to export #{@user.name}'s #{micropost_count} microposts.\nAre you sure you want to continue?" } %>
+      
       <ol class="microposts">
         <%= render @microposts %>
       </ol>

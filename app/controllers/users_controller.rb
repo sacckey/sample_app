@@ -12,6 +12,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
     @microposts = @user.microposts.search(params[:search]).paginate(page: params[:page])
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data render_to_string, filename: "#{@user.name}'sMicroposts.csv", type: :csv
+      end
+    end
   end
   
   def new
