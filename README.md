@@ -25,16 +25,16 @@
 ## 使い方
 
 最初にリポジトリを手元にクローンしてください。  
-次に、以下のコマンドで動作用のdockerコンテナを立ち上げます。
+次に、以下のコマンドで動作用のdockerコンテナを起動します。
 
 ```
 $ docker build -t sample_app .
 $ docker run -d -p 3000:3000 sample_app
 ```
 
-コンテナ立ち上げ後にhttp://localhost:3000/ にアクセスすることで、アプリケーションを動かすことができます。  
-また、以下にデプロイしていますので、そちらでも動かすことができます。  
-https://agile-waters-23575.herokuapp.com/about/
+コンテナ起動後にhttp://localhost:3000/ にアクセスすることで、アプリケーションを動かすことができます。  
+また、以下にデプロイしていますので、そちらでも動かすことができます。
+https://sackey-micropostapp.herokuapp.com/about
 
 ## ライセンス
 
