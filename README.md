@@ -34,7 +34,7 @@ $ docker run -d -p 3000:3000 sample_app
 
 コンテナ起動後にhttp://localhost:3000/ にアクセスすることで、アプリケーションを動かすことができます。  
 
-また、以下にデプロイしていますので、そちらでも動かすことができます。
+また、以下にデプロイしていますので、そちらでも動かすことができます。  
 https://sackey-micropostapp.herokuapp.com/about
 
 ## ライセンス
