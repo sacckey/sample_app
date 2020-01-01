@@ -36,8 +36,3 @@ $ docker run -d -p 3000:3000 sample_app
 
 また、以下にデプロイしていますので、そちらでも動かすことができます。  
 https://sackey-micropostapp.herokuapp.com/about
-
-## ライセンス
-
-[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
-ソースコードは、MITライセンスとBeerwareライセンスのもとで公開されています。
